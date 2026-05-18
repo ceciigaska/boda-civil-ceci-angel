@@ -40,12 +40,17 @@
         }
 
         .page-img {
-            width: 100%;
-            height: auto;
-            pointer-events: none; /* Evita que guarden la imagen por error al dejar presionado */
-            -webkit-user-select: none;
-            user-select: none;
-        }
+			width: 100%;
+			height: auto;
+			display: block;
+			pointer-events: none;
+			-webkit-user-select: none;
+			user-select: none;
+			
+			/* Estos atributos le dicen al navegador que optimice el escalado de imágenes pequeñas */
+			image-rendering: -webkit-optimize-contrast; /* Para Safari / iOS */
+			image-rendering: crisp-edges;               /* Para navegadores modernos */
+		}
 
         /* Botones Interactivos Invisibles (Capas superiores) */
         .interactive-btn {
