@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cecilia & Angel | Nuestra Boda</title>
+    <style>
+        /* Paleta de color basada en tu diseño crema/oro */
+        :root {
+            --bg-color: #fffaf1; 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Contenedor principal para simular la invitación móvil */
+        .invitation-container {
+            width: 100%;
+            max-width: 500px; /* Ancho ideal para emular vista móvil en desktop */
+            background-color: var(--bg-color);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .page-wrapper {
+            position: relative;
+            width: 100%;
+            line-height: 0; /* Remueve espacios fantasmas entre imágenes */
+        }
+
+        .page-img {
+            width: 100%;
+            height: auto;
+            pointer-events: none; /* Evita que guarden la imagen por error al dejar presionado */
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* Botones Interactivos Invisibles (Capas superiores) */
+        .interactive-btn {
+            position: absolute;
+            background: rgba(255, 255, 255, 0); /* 100% transparente */
+            border: none;
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+            /* Opcional para desarrollo: cambia a rgba(200,0,0,0.3) para ver dónde está el área de clic */
+            background-color: rgba(255, 255, 255, 0); 
+        }
+
+        /* Posicionamiento dinámico usando porcentajes para que sea 100% responsivo */
+        
+        /* Botón de Mapa en la Página 3 */
+        .btn-mapa {
+            top: 25%;    /* Ajusta estos % según la posición exacta en tu diseño */
+            left: 10%;
+            width: 80%;
+            height: 12%;
+        }
+
+        /* Botón de RSVP en la Página 4 */
+        .btn-rsvp {
+            top: 60%;    /* Ajusta estos % según la posición exacta de "Confirmar Asistencia Aquí" */
+            left: 15%;
+            width: 70%;
+            height: 10%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-container">
+
+        <div class="page-wrapper">
+            <img src="pagina1.png" alt="Portada Cecilia y Angel" class="page-img">
+        </div>
+
+        <div class="page-wrapper">
+            <img src="pagina2.png" alt="Itinerario" class="page-img">
+        </div>
+
+        <div class="page-wrapper">
+            <img src="pagina3.png" alt="Detalles Importantes" class="page-img">
+            <a href="https://maps.google.com/?q=Cda.+Paseo+del+Pregonero+63+Colina+del+Sur" target="_blank" class="interactive-btn btn-mapa"></a>
+        </div>
+
+        <div class="page-wrapper">
+            <img src="pagina4.png" alt="Confirmación" class="page-img">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpPpKKzpVs4d5yEBbytdB-XUAqnf1m--AH1bS7wNBzXRRExg/viewform?usp=dialog" target="_blank" class="interactive-btn btn-rsvp"></a>
+        </div>
+
+    </div>
+
+</body>
+</html>
